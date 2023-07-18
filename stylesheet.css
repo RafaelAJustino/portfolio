@@ -162,6 +162,16 @@ header {
     display: flex;
     align-items: center;
     gap: 24px;
+    transition: all 0.3s ease;
+  }
+
+  #header-nav-ds .nav-itens .item {
+   padding: 5px;
+    transition: all 0.3s ease;
+  }
+
+  #header-nav-ds .nav-itens .item:hover {
+    transform: translateY(-2px)
   }
 }
 
