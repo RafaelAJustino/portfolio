@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rafael Justino</title>
 
+    <link
+      href="http://fonts.googleapis.com/css?family=Kanit"
+      rel="stylesheet"
+      type="text/css"
+    />
     <link rel="stylesheet" href="./stylesheet.css" />
   </head>
   <body>
@@ -18,20 +23,22 @@
         </button>
         <nav id="header-nav-ds">
           <div class="nav-itens">
-            <a class="item" href="">Início</a>
-            <a class="item" href="">Sobre</a>
-            <a class="item" href="">Habilidades</a>
-            <a class="item" href="">Contato</a>
+            <a class="item" href="#home">Início</a>
+            <a class="item" href="#about">Sobre</a>
+            <a class="item" href="#projects">Projetos</a>
+            <a class="item" href="#skills">Habilidades</a>
+            <a class="item" href="#contact">Contato</a>
             <button class="btn">Download CV</button>
           </div>
         </nav>
       </div>
       <nav id="header-nav-mb">
         <div class="nav-itens">
-          <a class="item" href="">Início</a>
-          <a class="item" href="">Sobre</a>
-          <a class="item" href="">Habilidades</a>
-          <a class="item" href="">Contato</a>
+          <a class="item" href="#home">Início</a>
+          <a class="item" href="#about">Sobre</a>
+          <a class="item" href="#projects">Projetos</a>
+          <a class="item" href="#skills">Habilidades</a>
+          <a class="item" href="#contact">Contato</a>
           <!-- <div class="social-media">
             <a href="" target="_blank"><img src="" alt="linkedin"></a>
             <a href="" target="_blank"><img src="" alt="github"></a>
@@ -42,6 +49,75 @@
         </div>
       </nav>
     </header>
+
+    <section id="home">
+      <div class="container">
+        <div class="home-txts">
+          <div>
+            <h1>Rafael Justino</h1>
+            <h4>Desenvolvedor Full-stack</h4>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ullam quis
+          </p>
+          <div class="home-btns">
+            <a href="" class="btn">Sobre mim</a>
+            <a href="" class="btn-white">Contato</a>
+          </div>
+        </div>
+        <div class="home-img">
+          <img src="" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section id="introduction">
+      <div class="container">
+        <div class="introduction-img"></div>
+        <div class="introduction-txts">
+          <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
+            ullam quis voluptatem tempore quod at quibusdam sequi accusantium
+            repellat quaerat perferendis, eius officiis laudantium sit, nostrum
+            rerum magnam sint. Veritatis.
+          </p>
+          <a href="" class="btn">Sobre mim</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div style="width: 300px; position: relative">
+          <div class="slideshow-container">
+            <div class="mySlides">
+              <div class="content">
+                <a href="" target="_blank">
+                  <img src="" alt="" />
+                </a>
+              </div>
+            </div>
+            <div class="mySlides">
+              <div class="content">
+                <a href="" target="_blank">
+                  <img src="" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <div class="dots-div" style="text-align: center">
+          <!-- <span class="dot" onclick="currentSlide(1)"></span> -->
+          <!-- <span class="dot" onclick="currentSlide(2)"></span> -->
+          <!-- <span class="dot" onclick="currentSlide(3)"></span> -->
+        </div>
+      </div>
+    </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="./script.js"></script>

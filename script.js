@@ -1,3 +1,11 @@
+let slideIndex = 1;
+const carousel = document.querySelector(".slideshow-container");
+const slides = document.getElementsByClassName("mySlides");
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+const dotsDiv = document.querySelector(".dots-div");
+const dots = document.getElementsByClassName("dot");
+
 $('.hamburguer').click(function (e) {
 	e.preventDefault();
 
@@ -69,3 +77,49 @@ debounce = function (func, wait, immediate) {
 		animScroll();
 	}, 20));
 })();
+
+// Carrossel
+
+function plusSlides(n) {
+	showSlides(slideIndex += n)
+}
+
+function currentSlide(n) {
+	showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+
+	carousel.style.width = `${slides.length * 300}px`
+
+	prev.style.display = "block";
+	next.style.display = "block";
+
+	if (n == 1) {
+		prev.style.display = "none";
+	}
+	if (n == slides.length) {
+		next.style.display = "none";
+	}
+
+	carousel.style.transform = `translatex(-${(n - 1) * 300}px)`
+
+	for (let index = 0; index < dots.length; index++) {
+		dots[index].classList.remove('active')
+	}
+	dots[n - 1].classList.add('active');
+}
+
+window.onload = () => {
+	for (let i = 1; i <= slides.length; i++) {
+		const span = document.createElement('span');
+		span.classList.add('dot');
+		span.addEventListener("click", function () {
+			currentSlide(i);
+		});
+
+		dotsDiv.appendChild(span);
+	}
+
+	showSlides(1);
+}

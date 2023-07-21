@@ -1,12 +1,25 @@
+:root {
+  --ligth-green: rgb(75, 134, 125);
+  --green: rgb(7, 56, 49);
+  --peach: rgba(237, 209, 185, 0.755);
+  --dark-peach: rgb(239 193 153);
+}
+
 * {
   margin: 0;
   padding: 0;
-  color: rgb(7, 56, 49);
+  color: var(--green);
   text-decoration: none;
+  font-family: "Kanit", sans-serif;
+  box-sizing: border-box;
 }
 
 body {
   background-color: white;
+}
+
+section {
+  overflow: hidden;
 }
 
 .container {
@@ -50,16 +63,21 @@ body {
 }
 
 header {
-  height: 80px;
+  position: sticky;
+  top: 0;
+  height: 50px;
   background-color: rgb(228, 228, 228);
   font-weight: 700;
+  z-index: 100;
 }
 
 #header-nav-ds {
   display: none;
+  z-index: 100;
 }
 
 #header-nav-mb {
+  z-index: 100;
   position: absolute;
   top: -500px;
   left: 0;
@@ -71,12 +89,12 @@ header {
   transition: all 0.3s ease;
 
   background-color: rgb(228, 228, 228);
-  
+
   width: 100%;
 }
 
 #header-nav-mb.active {
-  top: 80px;
+  top: 50px;
 }
 
 #header-nav-mb .nav-itens {
@@ -95,38 +113,210 @@ header {
   gap: 24px;
 }
 
-#header-nav-mb .social-media a{
+#header-nav-mb .social-media a {
   width: 32px;
   height: 32px;
   transition: all 0.3s ease;
 }
 
-#header-nav-mb .social-media a:hover{
+#header-nav-mb .social-media a:hover {
   transform: scale(105%);
 }
 
-#header-nav-mb .social-media a img{
+#header-nav-mb .social-media a img {
   width: 100%;
   height: auto;
   object-fit: contain;
 }
 
 .btn {
-  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  width: 220px;
   text-align: center;
-  padding: 0 30px;
-  background-color: rgb(7, 56, 49);
-  color: rgb(228, 228, 228);
-  border: none;
+  border: 1px solid var(--green);
+  background-color: var(--green);
+  color: rgb(255 255 255);
   font-weight: 700;
   text-transform: uppercase;
   opacity: 1;
   transition: all 0.3s ease;
 }
 
+.btn-white {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  width: 220px;
+  text-align: center;
+  border: 1px solid var(--green);
+  background-color: rgb(255 255 255);
+  color: var(--green);
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.btn-white:hover,
 .btn:hover {
   cursor: pointer;
   opacity: 0.8;
+}
+
+#home {
+  height: 610px;
+  background: linear-gradient(
+    180deg,
+    var(--green) 50%,
+    rgb(255 255 255) 50%,
+    rgb(255 255 255) 100%
+  );
+  text-align: center;
+}
+
+#home .container {
+  flex-direction: column-reverse;
+}
+
+.home-img,
+.home-txts {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.home-txts {
+  max-width: 300px;
+  gap: 18px;
+}
+
+.home-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.home-img img {
+  max-width: 200px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#introduction {
+  height: 720px;
+  background: linear-gradient(
+    180deg,
+    var(--peach) 50%,
+    rgb(255 255 255) 50%,
+    rgb(255 255 255) 100%
+  );
+  text-align: left;
+  margin: 42px 0;
+}
+
+#introduction .container {
+  flex-direction: column;
+}
+
+.introduction-img,
+.introduction-txts {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 24px 0;
+}
+
+#projects {
+  height: fit-content;
+  padding: 50px 0;
+  background-color: var(--peach);
+}
+
+#projects .container {
+  flex-direction: column;
+  position: relative;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+/* Hide the images by default */
+.mySlides {
+  position: relative;
+  height: 300px;
+  width: 300px;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 5px;
+  color: var(--green);
+  font-weight: bold;
+  font-size: 24px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: -10px;
+  border-radius: 3px 0 0 3px;
+}
+.prev {
+  left: -10px;
+  border-radius: 3px 0 0 3px;
+}
+
+.content {
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 300px;
+}
+.content img {
+  width: 100%;
+  height: 100%;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: var(--ligth-green);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: var(--green);
 }
 
 @media screen and (min-width: 768px) {
@@ -166,12 +356,115 @@ header {
   }
 
   #header-nav-ds .nav-itens .item {
-   padding: 5px;
+    padding: 5px;
     transition: all 0.3s ease;
   }
 
   #header-nav-ds .nav-itens .item:hover {
-    transform: translateY(-2px)
+    transform: translateY(-2px);
+  }
+
+  #home {
+    height: 500px;
+    background: linear-gradient(
+      90deg,
+      rgb(255 255 255) 50%,
+      var(--green) 50%,
+      var(--green) 100%
+    );
+    text-align: left;
+    padding: 32px 0;
+  }
+
+  #home .container {
+    flex-direction: row;
+    gap: 56px;
+  }
+
+  .home-img,
+  .home-txts {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .home-txts {
+    padding-top: 0;
+    max-width: 100%;
+    gap: 24px;
+    justify-content: center;
+  }
+
+  .home-txts h1 {
+    font-size: 48px;
+  }
+
+  .home-txts h4 {
+    font-size: 16px;
+  }
+
+  .home-txts p {
+    font-size: 24px;
+  }
+
+  .home-btns {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .home-img img {
+    align-self: center;
+    max-width: 350px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  #introduction {
+    height: 500px;
+    background: linear-gradient(
+      90deg,
+      var(--dark-peach) 45%,
+      rgb(255 255 255) 45%,
+      rgb(255 255 255) 100%
+    );
+    text-align: left;
+    margin: 80px 0;
+  }
+
+  #introduction .container {
+    flex-direction: row;
+    gap: 56px;
+  }
+
+  .introduction-img,
+  .introduction-txts {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 24px 0;
+  }
+
+  .introduction-img {
+    width: 45%;
+  }
+
+  .introduction-txts {
+    width: 50%;
+  }
+  
+  .introduction-txts h2{
+    font-size: 36px;
+  }
+  
+  .introduction-txts p{
+    font-size: 24px;
   }
 }
 
