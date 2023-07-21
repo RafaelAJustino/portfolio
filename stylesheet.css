@@ -71,6 +71,10 @@ header {
   z-index: 100;
 }
 
+header.title {
+  font-size: 24px;
+}
+
 #header-nav-ds {
   display: none;
   z-index: 100;
@@ -332,6 +336,14 @@ header {
 }
 
 @media screen and (min-width: 992px) {
+  header {
+    height: 80px;
+  }
+
+  header.title {
+    font-size: 30px;
+  }
+
   .container {
     max-width: 900px;
   }
@@ -458,12 +470,12 @@ header {
   .introduction-txts {
     width: 50%;
   }
-  
-  .introduction-txts h2{
+
+  .introduction-txts h2 {
     font-size: 36px;
   }
-  
-  .introduction-txts p{
+
+  .introduction-txts p {
     font-size: 24px;
   }
 }
