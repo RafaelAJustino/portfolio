@@ -1,4 +1,6 @@
 let slideIndex = 1;
+let touchstart;
+let touchmove;
 const container = document.querySelector(".container");
 const carousel = document.querySelector(".slideshow-container");
 const slides = document.getElementsByClassName("mySlides");
@@ -95,15 +97,15 @@ function showSlides(n) {
 
 	carousel.style.width = `${slides.length * 300}px`
 
-	prev.style.display = "block";
-	next.style.display = "block";
+	// prev.style.display = "block";
+	// next.style.display = "block";
 
-	if (n == 1) {
-		prev.style.display = "none";
-	}
-	if (n == slides.length) {
-		next.style.display = "none";
-	}
+	// if (n == 1) {
+	// 	prev.style.display = "none";
+	// }
+	// if (n == slides.length) {
+	// 	next.style.display = "none";
+	// }
 
 	carousel.style.transform = `translatex(-${(n - 1) * width}px)`
 
@@ -112,6 +114,29 @@ function showSlides(n) {
 	}
 	dots[n - 1].classList.add('active');
 }
+
+carousel.addEventListener('touchstart', function (e) {
+	touchstart = e.targetTouches[0].clientX;
+})
+
+carousel.addEventListener('touchmove', function (e) {
+	touchmove = e.targetTouches[0].clientX;
+})
+
+carousel.addEventListener('touchend', function (e) {
+
+	if (slideIndex >= 1 && slideIndex < slides.length) {
+		if (touchstart + 50 >= touchmove) {
+			showSlides(slideIndex += 1)
+		}
+	}
+
+	if (slideIndex > 1 && slideIndex <= slides.length) {
+		if (touchstart <= touchmove + 50) {
+			showSlides(slideIndex -= 1)
+		}
+	}
+})
 
 window.onload = () => {
 	for (let i = 1; i <= slides.length; i++) {
