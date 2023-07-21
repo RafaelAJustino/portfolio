@@ -468,7 +468,11 @@ header.title {
   }
 
   .introduction-txts {
+    padding: 0;
     width: 50%;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 24px;
   }
 
   .introduction-txts h2 {
