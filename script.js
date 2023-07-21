@@ -1,4 +1,5 @@
 let slideIndex = 1;
+const container = document.querySelector(".container");
 const carousel = document.querySelector(".slideshow-container");
 const slides = document.getElementsByClassName("mySlides");
 const prev = document.querySelector(".prev");
@@ -90,6 +91,8 @@ function currentSlide(n) {
 
 function showSlides(n) {
 
+	const width = slides[0].clientWidth
+
 	carousel.style.width = `${slides.length * 300}px`
 
 	prev.style.display = "block";
@@ -102,7 +105,7 @@ function showSlides(n) {
 		next.style.display = "none";
 	}
 
-	carousel.style.transform = `translatex(-${(n - 1) * 300}px)`
+	carousel.style.transform = `translatex(-${(n - 1) * width}px)`
 
 	for (let index = 0; index < dots.length; index++) {
 		dots[index].classList.remove('active')
