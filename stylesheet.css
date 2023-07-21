@@ -493,6 +493,7 @@ header.title {
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
+    transform: none !important;
   }
 
   .mySlides {
