@@ -14,12 +14,12 @@ $('.hamburguer').click(function (e) {
 
 	console.log(e.ta);
 
-	if ($(this).hasClass('active')) {
-		$(this).removeClass('active');
-		$('#header-nav-mb').removeClass('active');
+	if ($(this).hasClass('active-btn')) {
+		$(this).removeClass('active-btn');
+		$('#header-nav-mb').removeClass('active-btn');
 	} else {
-		$(this).addClass('active');
-		$('#header-nav-mb').addClass('active');
+		$(this).addClass('active-btn');
+		$('#header-nav-mb').addClass('active-btn');
 	}
 })
 
@@ -29,7 +29,7 @@ $('nav a').click(function (e) {
 		menuHeight = $('nav').innerHeight(),
 		targetOffset = $(id).offset().top;
 	$('html, body').animate({
-		scrollTop: targetOffset - menuHeight
+		scrollTop: targetOffset - 80
 	}, 300);
 });
 
@@ -53,7 +53,7 @@ debounce = function (func, wait, immediate) {
 (function () {
 	var $target = $('.scroll'),
 		animationClass = 'scroll-start',
-		offset = $(window).height() * 3 / 4;
+		offset = $(window).height() * 8 / 10;
 
 	function animScroll() {
 		var documentTop = $(document).scrollTop();
@@ -62,15 +62,10 @@ debounce = function (func, wait, immediate) {
 			var itemTop = $(this).offset().top;
 			if (documentTop > itemTop - offset) {
 				$(this).addClass(animationClass);
-				if (this.id == 'skill') {
-					// skill();
-				}
-			} else {
-				$(this).removeClass(animationClass);
-				if (this.id == 'skill') {
-					// cancelSkill();
-				}
 			}
+			// else {
+			// 	$(this).removeClass(animationClass);
+			// }
 		});
 	}
 
@@ -92,6 +87,9 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
+	for (let index = 0; index < dots.length; index++) {
+		dots[index].classList.remove('active')
+	}
 
 	const width = slides[0].clientWidth
 
@@ -109,9 +107,6 @@ function showSlides(n) {
 
 	carousel.style.transform = `translatex(-${(n - 1) * width}px)`
 
-	for (let index = 0; index < dots.length; index++) {
-		dots[index].classList.remove('active')
-	}
 	dots[n - 1].classList.add('active');
 }
 
