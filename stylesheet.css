@@ -732,7 +732,7 @@ footer p {
     display: flex;
     width: 100%;
     flex-direction: row;
-    gap: 24px;
+    gap: 40px;
   }
 
   #about .about-graduation h3 {
